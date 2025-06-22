@@ -13,11 +13,10 @@ keywords = [
     "Meta Motivo",
 ]
 
-
 pytrends.build_payload(kw_list=keywords, timeframe='2023-01-01 2025-01-01')
 
 data = pytrends.interest_over_time()
 data = data.drop(columns=['isPartial'])
 
 print(data.head())
-data.to_csv("meta_arvr_trends.csv")
+data.to_csv("Dataset/meta_arvr_trends.csv")
