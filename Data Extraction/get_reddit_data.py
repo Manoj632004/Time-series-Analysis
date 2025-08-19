@@ -2,16 +2,14 @@ import praw
 import pandas as pd
 from datetime import datetime, timedelta
 
-# 🔐 Replace with your own credentials
 reddit = praw.Reddit(
-    client_id='18v7WsgZTmv8zPUVnw1OAQ',
-    client_secret='t5tNNWRBGnGvDAKOdVuMs8GvAh4cbQ',
+    client_id='clientid',
+    client_secret='secret',
     user_agent='meta-ai-mentions',
     #username='YOUR_REDDIT_USERNAME',
     #password='YOUR_PASSWORD'
 )
 
-# Parameters
 query = "Meta AI"
 start_date = datetime(2023, 1, 1)
 end_date = datetime(2025, 1, 1)
@@ -33,7 +31,6 @@ while current_date < end_date:
     print(f"{current_date.date()} — {day_count} posts")
     current_date = next_day
 
-# Convert to DataFrame
 df = pd.DataFrame(list(results.items()), columns=['date', 'reddit_mentions'])
 df.to_csv("meta_ai_reddit_mentions.csv", index=False)
 print("\n✅ Done! Sample output:")
