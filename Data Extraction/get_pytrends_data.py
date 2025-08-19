@@ -3,7 +3,6 @@ import pandas as pd
 
 pytrends = TrendReq(hl='en-US', tz=330)
 
-# Limit to 5 keywords max
 #keywords = ["Meta Quest", "Meta Quest 3", "Meta Quest Pro", "Oculus Quest", "Meta AR glasses"]
 keywords = [
     "Meta AI",
