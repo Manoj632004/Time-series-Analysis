@@ -6,7 +6,7 @@ import time
 API_KEY = 'apikey'
 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
-# Parameters
+
 query = "Meta AI"
 start_date = datetime(2023, 11, 4)
 end_date = datetime(2024, 1, 6)
@@ -57,5 +57,5 @@ while current < end_date:
 
 df = pd.DataFrame(results)
 df.to_csv("Dataset/meta_ai_youtube_mentions_5_2.csv", index=False)
-print("\n✅ Done! Sample output:")
+print("\nSample:")
 print(df.head())
