@@ -54,6 +54,6 @@ while current < end_date:
 # Save results
 df = pd.DataFrame(results)
 df.to_csv("meta_ai_twitter_mentions_weekly.csv", index=False)
-print("\n✅ Done! Sample:")
+print("\nSample:")
 print(df.head())
 """
