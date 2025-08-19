@@ -6,8 +6,6 @@ reddit = praw.Reddit(
     client_id='clientid',
     client_secret='secret',
     user_agent='meta-ai-mentions',
-    #username='YOUR_REDDIT_USERNAME',
-    #password='YOUR_PASSWORD'
 )
 
 query = "Meta AI"
@@ -33,5 +31,5 @@ while current_date < end_date:
 
 df = pd.DataFrame(list(results.items()), columns=['date', 'reddit_mentions'])
 df.to_csv("meta_ai_reddit_mentions.csv", index=False)
-print("\n✅ Done! Sample output:")
+print("\nSample:")
 print(df.head())
