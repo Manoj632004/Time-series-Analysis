@@ -1,4 +1,4 @@
-# 📊 Meta Product Trend Analysis & Forecasting
+# Meta Product Trend Analysis & Forecasting
 
 ## What?
 This repository contains code and scripts for collecting and analyzing trend data related to **Meta’s AI** and **AR/VR** verticals.
