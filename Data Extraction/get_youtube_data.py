@@ -3,10 +3,8 @@ from datetime import datetime, timedelta
 import pandas as pd
 import time
 
-# 🔐 Add your API key here
-API_KEY = 'AIzaSyBkBJmzi2rddV31e0ct_4qJw02Zy9vqY14'#'AIzaSyDbUC-Kr361dS4z2pFUXREuOp2_XzNAgK0'
+API_KEY = 'apikey'
 
-# Initialize API client
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 # Parameters
 query = "Meta AI"
@@ -42,7 +40,7 @@ while current < end_date:
             next_page_token = response.get('nextPageToken')
             if not next_page_token:
                 break
-            time.sleep(0.2)  # brief pause between pages to respect rate limits
+            time.sleep(0.2)  
 
         except Exception as e:
             print(f"Error during pagination on {current.date()} — {e}")
@@ -55,9 +53,8 @@ while current < end_date:
     })
 
     current = next_week
-    time.sleep(0.5)  # pause between weeks to respect quota
+    time.sleep(0.5)  # pause between weeks to limit quota
 
-# Save to CSV
 df = pd.DataFrame(results)
 df.to_csv("Dataset/meta_ai_youtube_mentions_5_2.csv", index=False)
 print("\n✅ Done! Sample output:")
